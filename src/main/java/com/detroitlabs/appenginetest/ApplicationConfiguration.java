@@ -1,4 +1,4 @@
-package com.detroitlabs;
+package com.detroitlabs.appenginetest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
