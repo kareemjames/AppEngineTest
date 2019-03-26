@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "employee")
 @Data
 @NoArgsConstructor
 public class Employee {
