@@ -44,7 +44,8 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-    public String saveEmployee(@ModelAttribute("articleForm") Employee employee) {
+    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
+
         employeeService.saveOrUpdate(employee);
 
         return "redirect:/employee/list";

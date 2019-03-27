@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>App Engine Demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Article List</h2>
+        <table class="table table-striped">
+            <thead>
+            <th scope="row">#ID</th>
+            <th scope="row">First Name</th>
+            <th scope="row">Last Name</th>
+            <th scope="row">Salary</th>
+            <th scope="row">Update</th>
+            <th scope="row">Delete</th>
+            </thead>
+            <tbody>
+            <div th:each="employee: ${allEmployees}">
+                <tr>
+                    <td th:text="${employee.id}"></td>
+                    <td th:text="${employee.firstName}"></td>
+                    <td th:text="${employee.lastName}"></td>
+                    <td th:text="${employee.salary}"></td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{'/employee/updateEmployee/' + ${employee.id}}" role="button">Update</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{'/employee/deleteEmployee/' + ${employee.id}}" role="button">Delete</a>
+                    </td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+        <a class="btn btn-primary" th:href="@{'/employee/addEmployee/'}" role="button">Add New Employee</a>
+    </div>
+</body>
+</html>
