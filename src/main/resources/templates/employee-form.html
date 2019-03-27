@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>App Engine Demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Employee</h2>
+    <form modelAttribute="employee" th:action="@{/employee/saveEmployee}" th:object="${employee}" cssClass="form" method="post" >
+        <!--<form:hidden path="id"/>-->
+        <input type="hidden" th:field="*{id}"/>
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" th:field="*{firstName}" cssClass="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" th:field="*{lastName}" cssClass="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Salary</label>
+            <input th:name="salary" type="text" th:field="*{salary}" cssClass="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+</div>
+</body>
+</html>
